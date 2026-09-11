@@ -1,0 +1,9 @@
+import React from 'react';
+import { Layout, PageHero, CTA } from '../components';
+import { trainingTopics } from '../siteData';
+
+export default function Training(){
+  return <Layout page="training"><PageHero eyebrow="Training & future skills" title="Practical learning for organisations that need to stay fundable, competitive and future-ready." text="GrantXpert also delivers seminars and training on EU funding, project management, leadership, innovation, entrepreneurship and modern business skills." image="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1500&q=82" action={<a className="btn" href="https://www.grantxpert.eu/news/categories/seminars" target="_blank" rel="noreferrer">See official seminar updates ↗</a>}/>
+    <section className="section"><div className="shell"><div className="training-grid">{trainingTopics.map(([n,t,d])=><article className="training-card" key={t}><span className="number">{n}</span><span className="service-icon">TR</span><h3>{t}</h3><p>{d}</p><a href="contact.html">Ask about this topic →</a></article>)}</div></div></section>
+    <section className="section soft"><div className="shell split"><div className="image-box"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1500&q=82" alt="Professional training"/></div><div className="copy"><span className="eyebrow">Better training discovery</span><h2>Training should change what people can do next.</h2><p className="lead">A stronger digital presentation can make seminars easier to discover, compare and register for — while linking each topic back to GrantXpert's consulting expertise.</p><div className="check-list"><span>Clear topic pathways</span><span>Corporate training enquiries</span><span>Seminar discovery</span><span>Direct contact flow</span></div><a className="text-link" href="contact.html">Discuss training needs →</a></div></div></section><CTA/></Layout>;
+}
